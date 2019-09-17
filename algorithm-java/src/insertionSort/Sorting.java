@@ -1,5 +1,7 @@
 package insertionSort;
 
+// https://hyeonstorage.tistory.com/268?category=578561 Âü°í
+
 public class Sorting {
 	
 	public static void insertionSort(Comparable[] list) {
