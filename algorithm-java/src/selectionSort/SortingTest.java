@@ -1,8 +1,8 @@
-package insertionSort;
+package selectionSort;
 
-// https://hyeonstorage.tistory.com/268?category=578561 참고
+// https://hyeonstorage.tistory.com/267?category=578561 - 선택정렬 테스트
 
-public class SortingTest { // 삽입정렬 테스트
+public class SortingTest {
 
 	public static void main(String[] args) {
 		
@@ -17,16 +17,18 @@ public class SortingTest { // 삽입정렬 테스트
         friends[6] = new Contact("Hyun", "Lee", "442-454-3211");
         friends[7] = new Contact("Cream", "Jone", "751-231-5618");
 		
-        System.out.println("#### Before Sorting ####");
+		System.out.println("######### Before Sorting #########");
+		
 		for (Contact friend : friends) {
 			System.out.println(friend);
 		}
 		
-		System.out.println("--------------------------------");
-
-		Sorting.insertionSort(friends);
-
-		System.out.println("#### After Sorting ####");
+		System.out.println("--------------------------------------");
+		
+		Sorting.selectionSort(friends);
+		
+		System.out.println("######### After Sorting #########");
+		
 		for (Contact friend : friends) {
 			System.out.println(friend);
 		}
