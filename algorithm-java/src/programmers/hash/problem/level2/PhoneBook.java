@@ -1,6 +1,6 @@
 package programmers.hash.problem.level2;
 
-import programmers.hash.problem.level2.solution.Jhnyang;
+import programmers.hash.problem.level2.solution.phoneBook.Jhnyang;
 
 // https://programmers.co.kr/learn/courses/30/lessons/42577
 
@@ -33,7 +33,7 @@ import programmers.hash.problem.level2.solution.Jhnyang;
  *
  */
 
-public class HashLevel2 {
+public class PhoneBook {
 	
 	public boolean solution(String[] phone_book) {
      
@@ -69,11 +69,11 @@ public class HashLevel2 {
 		
 		if (show.equals("default")) {
 			
-			HashLevel2 hashlvl2 = new HashLevel2();
+			PhoneBook pb = new PhoneBook();
 			
-			return1 = hashlvl2.solution(phone_book1);
-			return2 = hashlvl2.solution(phone_book2);
-			return3 = hashlvl2.solution(phone_book3);
+			return1 = pb.solution(phone_book1);
+			return2 = pb.solution(phone_book2);
+			return3 = pb.solution(phone_book3);
 			
 		} else if (show.equals("jhnyang_01")) {
 			

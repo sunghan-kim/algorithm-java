@@ -1,4 +1,4 @@
-package programmers.hash.problem.level2.solution;
+package programmers.hash.problem.level2.solution.phoneBook;
 
 import java.util.Arrays;
 
