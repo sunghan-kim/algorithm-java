@@ -3,7 +3,7 @@ package programmers.hash.problem.level1;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import programmers.hash.problem.level1.solution.HMYKSolution;
+import programmers.hash.problem.level1.solution.HMYK;
 
 /**
  * 
@@ -31,6 +31,19 @@ import programmers.hash.problem.level1.solution.HMYKSolution;
 
 public class HashLevel1 {
 
+	/**
+	 * 
+	 * # solution
+	 * 
+	 *   - HashMap 이용
+	 * 
+	 * @param participant
+	 * @param completion
+	 * @return answer
+	 * 
+	 * 제출 결과 : 성공
+	 * 
+	 */
 	public String solution(String[] participant, String[] completion) {
 		
 		String answer = "";
@@ -42,7 +55,7 @@ public class HashLevel1 {
 		
 		for (String key : hm.keySet()) {
 			if (hm.get(key) != 0) {
-				answer = key;
+				answer = key;	
 			}
 		}
 		
@@ -85,7 +98,7 @@ public class HashLevel1 {
 			
 		} else if (show.equals("HMYK_01")) {
 			
-			HMYKSolution hmyk = new HMYKSolution();
+			HMYK hmyk = new HMYK();
 			
 			answer1 = hmyk.solution1(participant1, completion1);
 			answer2 = hmyk.solution1(participant2, completion2);
@@ -93,7 +106,7 @@ public class HashLevel1 {
 			
 		} else if (show.equals("HYMK_02")) {
 			
-			HMYKSolution hmyk = new HMYKSolution();
+			HMYK hmyk = new HMYK();
 			
 			answer1 = hmyk.solution2(participant1, completion1);
 			answer2 = hmyk.solution2(participant2, completion2);

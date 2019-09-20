@@ -18,7 +18,7 @@ import programmers.hash.problem.level1.HashLevel1;
  *
  */
 
-public class HMYKSolution {
+public class HMYK {
 	
 	public String solution1(String[] participant, String[] completion) {
 		
