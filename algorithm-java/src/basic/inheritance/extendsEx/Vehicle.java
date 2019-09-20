@@ -1,4 +1,4 @@
-package inheritance.extendsEx;
+package basic.inheritance.extendsEx;
 
 // https://zbomoon.tistory.com/13
 
