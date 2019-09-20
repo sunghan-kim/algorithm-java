@@ -1,9 +1,9 @@
-package programmers.hash.problem.level1.solution;
+package programmers.hash.problem.level1.solution.running;
 
 import java.util.Arrays;
 import java.util.HashMap;
 
-import programmers.hash.problem.level1.HashLevel1;
+import programmers.hash.problem.level1.Running;
 
 // https://blog.naver.com/PostView.nhn?blogId=yongyos&logNo=221478544472&parentCategoryNo=&categoryNo=&viewDate=&isShowPopularPosts=false&from=postView
 

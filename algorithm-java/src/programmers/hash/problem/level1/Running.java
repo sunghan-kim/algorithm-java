@@ -3,7 +3,7 @@ package programmers.hash.problem.level1;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import programmers.hash.problem.level1.solution.HMYK;
+import programmers.hash.problem.level1.solution.running.HMYK;
 
 /**
  * 
@@ -29,7 +29,7 @@ import programmers.hash.problem.level1.solution.HMYK;
  *
  */
 
-public class HashLevel1 {
+public class Running {
 
 	/**
 	 * 
@@ -90,11 +90,11 @@ public class HashLevel1 {
 		
 		if (show.equals("default")) { // 프로그래머스 최빈 정답
 		
-			HashLevel1 hashlvl1 = new HashLevel1();
+			Running run = new Running();
 			
-			answer1 = hashlvl1.solution(participant1, completion1);
-			answer2 = hashlvl1.solution(participant2, completion2);
-			answer3 = hashlvl1.solution(participant3, completion3);
+			answer1 = run.solution(participant1, completion1);
+			answer2 = run.solution(participant2, completion2);
+			answer3 = run.solution(participant3, completion3);
 			
 		} else if (show.equals("HMYK_01")) {
 			
