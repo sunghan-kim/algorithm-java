@@ -66,46 +66,11 @@ import programmers.hash.problem.level3.solution.bestAlbum.SarahNa;
 
 public class BestAlbum {
 
-	public int[] solution(String[] genres, int[] plays) {
+	
+	public int[] solution1(String[] genres, int[] plays) {
         int[] answer = {};
         
-        HashMap<String, Integer> gmap = new HashMap<>();
         
-        for (int i=0; i < genres.length; i++) {
-        	
-        	String gkey = genres[i];
-        	
-        	if (!gmap.containsKey(gkey)) {
-        		
-        		gmap.put(gkey, 1);
-        		
-        	} else {
-        		
-        		gmap.replace(gkey, gmap.get(gkey)+1);
-        		
-        	}
-        	
-        }
-        
-        
-        
-        /*
-        int[] gsizes = new int[gmap.keySet().size()];
-        
-        for (int i=0; i < gsizes.length; i++) {
-        	
-        	
-        	
-        }
-        
-        
-        
-        for (String key : gmap.keySet()) {
-        	
-        	System.out.println(key);
-        	
-        }
-        */
         return answer;
         
     }
@@ -117,17 +82,21 @@ public class BestAlbum {
 		
 		int[] answer = null;
 		
-		String show = "default"; // default, sarah
+		String show = "sarah"; // default, sarah, dk
 				
 		if (show.equals("default")) {
 			
 			BestAlbum ba = new BestAlbum();
 			
-			answer = ba.solution(genres, plays);
+			answer = ba.solution1(genres, plays);
 			
 		} else if (show.equals("sarah")) {
 			
 			SarahNa sr = new SarahNa();
+			
+			answer = sr.solution(genres, plays);
+			
+		} else if (show.equals("dk")) {
 			
 			
 			
