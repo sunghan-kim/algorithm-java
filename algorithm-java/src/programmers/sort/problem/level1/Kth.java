@@ -117,7 +117,7 @@ public class Kth {
 			
 		}
 			
-		System.out.println(Arrays.toString(answer));
+		System.out.println(Arrays.toString(answer)); // [5, 6, 3]
 		
 	}
 	

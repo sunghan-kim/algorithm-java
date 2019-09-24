@@ -1,4 +1,4 @@
-package programmers.hash.about;
+package programmers.hash.usage;
 
 import java.util.HashMap;
 import java.util.Iterator;
