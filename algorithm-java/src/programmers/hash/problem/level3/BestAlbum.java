@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 import programmers.hash.problem.level3.solution.bestAlbum.SarahNa;
+import programmers.hash.problem.level3.solution.bestAlbum.developerdk.DkSolution;
 
 // https://programmers.co.kr/learn/courses/30/lessons/42579
 
@@ -82,7 +83,7 @@ public class BestAlbum {
 		
 		int[] answer = null;
 		
-		String show = "sarah"; // default, sarah, dk
+		String show = "dk"; // default, sarah, dk
 				
 		if (show.equals("default")) {
 			
@@ -98,7 +99,9 @@ public class BestAlbum {
 			
 		} else if (show.equals("dk")) {
 			
+			DkSolution dk = new DkSolution();
 			
+			answer = dk.solution(genres, plays);
 			
 		}
 				
