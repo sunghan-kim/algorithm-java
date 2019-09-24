@@ -1,4 +1,6 @@
-package programmers.sort.usage.list.linkedList;
+package programmers.sort.usage.list.opentutorials.linkedList;
+
+import java.util.ListIterator;
 
 // https://opentutorials.org/module/1335/8857
 
@@ -287,4 +289,182 @@ public class LinkedList {
 		return returnData;
 		
 	}
+	
+	/**
+	 * 
+	 * 5. 엘리먼트의 크기
+	 * 
+	 */
+	public int size() {
+		
+		return size;
+		
+	}
+	
+	/**
+	 * 
+	 * 6. 엘리먼트 가져오기
+	 * 
+	 */
+	public Object get(int k) {
+		
+		Node temp = node(k);
+		
+		return temp.data;
+		
+	}
+	
+	/**
+	 * 
+	 * 7. 탐색
+	 * 
+	 *   - 특정한 값을 가진 엘리먼트의 인덱스 값을 알아내는 방법
+	 *   - 값이 있다면 그 값이 발견되는 첫 번째 인덱스 값을 리턴
+	 *   - 값이 없다면 -1을 리턴
+	 * 
+	 */
+	public int indexOf(Object data) {
+		
+		// 7.1 탐색 대상이 되는 노드를 temp로 지정
+		Node temp = head;
+		
+		// 7.2 탐색 대상이 몇 번째 엘리먼트에 있는 지를 의미하는 변수로 index 사용
+		int index = 0;
+		
+		// 7.3 탐색 값과 탐색 대상의 값을 비교
+		while (temp.data != data) {
+			
+			temp = temp.next;
+			index++;
+			
+			// 7.4 temp == null -> 더 이상 탐색 대상이 없다는 것을 의미
+			if (temp == null) {
+				
+				return -1;
+				
+			}
+			
+		}
+		
+		// 7.5 탐색 대상을 찾았다면 대상의 인덱스 값을 리턴
+		
+		return index;
+		
+	}
+	
+	/**
+	 * 
+	 * 8. 반복 
+	 * 
+	 */
+	
+	/**
+	 * 
+	 * 8.1 Iterator 객체 생성과 next 메서드
+	 * 
+	 */
+	
+	// 8.1.1 반복자를 생성해서 리턴
+	public ListIterator listIterator() {
+		
+		return new ListIterator();
+		
+	}
+	
+	// 8.1.2 ListIterator 객체
+	public class ListIterator {
+		
+		private Node lastReturned;
+		private Node next;
+		private int nextIndex;
+		
+		ListIterator() {
+			
+			next = head;
+			nextIndex = 0;
+			
+		}
+		
+		// 8.1.3 본 메서드를 호출하면 cursor의 참조값이 기존 cursor.next로 변경됨
+		public Object next() {
+			
+			lastReturned = next;
+			next = next.next;
+			nextIndex++;
+			
+			return lastReturned.data;
+			
+		}
+		
+		/**
+		 * 
+		 * 8.2 hasNext
+		 * 
+		 */
+		public boolean hasNext() {
+			
+			return nextIndex < size();
+			
+		}
+		
+		/**
+		 * 
+		 * 8.3 add
+		 * 
+		 */
+		public void add(Object input) {
+			
+			Node newNode = new Node(input);
+			
+			if (lastReturned == null) {
+				
+				head = newNode;
+				newNode.next = next;
+				
+			} else {
+				
+				lastReturned.next = newNode;
+				newNode.next = next;
+				
+			}
+			
+			lastReturned = newNode;
+			nextIndex++;
+			size++;
+			
+		}
+		
+		/**
+		 * 
+		 * 8.4 remove
+		 * 
+		 */
+		public void remove() {
+			
+			if (nextIndex == 0) {
+				
+				throw new IllegalStateException();
+				
+			}
+			
+			LinkedList.this.remove(nextIndex-1);
+			nextIndex--;
+			
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
