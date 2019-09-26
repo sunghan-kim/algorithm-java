@@ -1,6 +1,10 @@
 package programmers.sort.problem.level2;
 
-import programmers.sort.problem.level1.Kth;
+import java.util.Arrays;
+
+import programmers.sort.problem.level2.solution.biggest.DeveloperDK;
+import programmers.sort.problem.level2.solution.biggest.Dreamholic;
+import programmers.sort.problem.level2.solution.biggest.Programmers;
 
 // https://programmers.co.kr/learn/courses/30/lessons/42746
 
@@ -48,6 +52,13 @@ import programmers.sort.problem.level1.Kth;
 
 public class Biggest {
 
+	private int n;
+	private int r;
+	private int[] res;
+	private String str;
+	private int permCnt;
+	private String[] answers;
+	private int ansIdx;
 	
 	/**
 	 * 
@@ -59,16 +70,91 @@ public class Biggest {
 	 * @param numbers
 	 * @return answer
 	 * 
+	 * - 제출결과 : 실패, 속도 오래 걸림
+	 * 
 	 */
 	public String solution(int[] numbers) {
         
 		String answer = "";
-        
-		// 6102, 6210, 1062, 1026, 
-        
-        return answer;
+		
+		n = numbers.length;
+		r = numbers.length;
+		res = new int[r];
+		
+		permCnt = calcPerm(n, r);
+		
+		answers = new String[permCnt];
+		
+		ansIdx = 0;
+		
+		perm(numbers, 0);
+		
+		Arrays.sort(answers);
+		
+		answer = answers[answers.length-1];
+		
+		return answer;
         
     }
+	
+	// 순열 경우의 수 계산 메소드
+	public static int calcPerm(int n, int r) {
+		
+		int val = n;
+		int result = 1;
+		
+		for (int i=0; i < r; i++) {
+			
+			result *= val;
+			val--;
+			
+		}
+		
+		return result;
+		
+	}
+	
+	// 순열 메소드
+	public void perm(int[] arr, int depth) {
+		
+		if (depth == r) {
+			
+			str = "";
+			
+			//System.out.println(Arrays.toString(res));
+			
+			for (int i=0; i < res.length; i++) {
+				
+				str += Integer.toString(res[i]);
+				
+			}
+			
+			answers[ansIdx] = str;
+			ansIdx++;
+						
+			return;
+			
+		}
+		
+		for (int i=depth; i < n; i++) {
+			
+			swap(arr, depth, i);		// 스왑
+			res[depth] = arr[depth];	// 선택된 원소 저장
+			perm(arr, depth+1);
+			swap(arr, depth, i);		// 복원
+			
+		}
+		
+	}
+	
+	// swap 메소드
+	public void swap(int[] arr, int i, int j) {
+		
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+		
+	}
 	
 	public static void main(String[] args) {
 		
@@ -78,7 +164,7 @@ public class Biggest {
 		String answer1 = "";
 		String answer2 = "";
 		
-		String show = "default"; // default
+		String show = "dh"; // default, pgrs_01, pgrs_02, dk, dh
 		
 		if (show.equals("default")) {
 			
@@ -86,6 +172,36 @@ public class Biggest {
 			
 			answer1 = big.solution(numbers1);
 			answer2 = big.solution(numbers2);
+			
+		} else if (show.equals("pgrs_01")) {
+			
+			Programmers pgrs = new Programmers();
+			
+			answer1 = pgrs.solution1(numbers1);
+			answer2 = pgrs.solution1(numbers2);
+			
+		} else if (show.equals("pgrs_02")) {
+			
+			Programmers pgrs = new Programmers();
+			
+			answer1 = pgrs.solution2(numbers1);
+			answer2 = pgrs.solution2(numbers2);
+			
+		} else if (show.equals("dk")) {
+			
+			DeveloperDK dk = new DeveloperDK();
+			
+			answer1 = dk.solution(numbers1);
+			answer2 = dk.solution(numbers2);
+			
+			
+		} else if (show.equals("dh")) {
+			
+			Dreamholic dh = new Dreamholic();
+			
+			answer1 = dh.solution(numbers1);
+			answer2 = dh.solution(numbers2);
+			
 			
 		}
 		
