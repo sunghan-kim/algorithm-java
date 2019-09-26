@@ -1,6 +1,8 @@
 package programmers.sort.usage.numberOfCases.combination;
 
-// https://seungbong8-8.tistory.com/15
+import java.util.Arrays;
+
+// https://limkydev.tistory.com/156
 
 /**
  * 
@@ -8,90 +10,94 @@ package programmers.sort.usage.numberOfCases.combination;
  * 
  * # 조합 (combination)
  * 
- *   - 조합 계산 함수 
- *   : void combination(int arr[], int index, int n, int c, int target);
+ *   - 조합 : n개의 숫자 중에서 r개의 수를 순서 없이 뽑는 경우
  *   
- *   - 위 함수는 아래의 조합 기본 공식을 이용한다.
+ *   - ex) [1,2,3] 숫자 배열에서 2개의 수를 순서없이 뽑는 경우
  *   
- *     nCr = n-1Cr-1 + n-1Cr
+ *     - [1,2]
+ *     - [1,3]
+ *     - [2,3]
  *     
- *   - ex) 4C2
+ *   - 순열로 뽑았을 경우의 [2,1],[3,1],[3,2]는 중복이므로 제거됨
  *   
- *     - (1,2) (1,3) (1,4) / (2,3) (2,4) (3,4)
- *     - 위와같이 6가지 경우가 존재하는 데, 
- *       이는 1을 선택하는 경우와 1을 선택하지 않는 경우로 구분된다.
- *       
- *     - 1을 선택한 경우 : (1,2) (1,3) (1,4)
+ *   - 조합은 부분 집합처럼 이해하면 좋다.
+ *   
+ *   - 조합의 핵심
+ *   
+ *     - 배열을 처음부터 마지막까지 돌면서
  *     
- *       - 2번째 값 선택 시 1을 제외한 나머지 3개 중 하나를 고른다.
+ *       1) 현재 인덱스를 선택하는 경우
+ *       2) 현재 인덱스를 선택하지 않는 경우
  *       
- *         (3C1 == n-1Cr-1)
- *         
- *     - 1을 선택하지 않은 경우 : (2,3) (2,4) (3,4)
+ *     - 위 두 가지로 모든 경우를 완전 탐색하면 된다.
  *     
- *       - 1, 2번째 값 선택 시 1을 제외한 나머지 3개 중 2개를 고른다.
+ *   - ex) 3C2
+ *   
+ *     - 1,2,3 -> 1을 뽑은 경우   -> 2,3   -> 2를 뽑은 경우 -> (1,2) (완료)
+ *     								       -> 3을 뽑은 경우 -> (1,3) (완료)
+ *             -> 1을 안뽑는 경우 -> 1,2,3 -> 2를 뽑는 경우 -> 1,3 -> 3을 뽑는 경우 -> (2,3) (완료)
+ *                                         -> 3을 뽑는 경우 -> 1,2 -> 2를 뽑는 경우 -> (3,2) (중복)
+ *     
  *       
- *         (3C2 == n-1Cr)
- *         
- *     - 즉, 4C2 = 3C1 + 3C2 가 된다.
  *
  */
 
 public class CombinationUsage2 {
-
 	
-	/**
-	 * 
-	 * combiCnt
-	 * 
-	 *  - 조합의 개수를 구하는 함수
-	 * 
-	 * @param n
-	 * @param r
-	 * @return cnt
-	 * 
-	 */
-	public static int combiCnt(int n, int r) {
+	public void combination(int[] combArr, int n, int r, int index, int target, int[] arr) {
 		
-		if (r == 0 || r == n) {
+		System.out.println("=> " + n + " " + r + " " + index + " " + target);
+	
+		if (r == 0) { // r==0 : 뽑을 원소를 다 뽑았다.
 			
-			return 1;
+			System.out.println(Arrays.toString(combArr));
+			
+			for (int i=0; i < index; i++) {
+				
+				System.out.print(arr[combArr[i]] + " ");
+				
+			}
+			
+			System.out.println();
+			
+		} else if (target == n) { // 끝까지 다 검사한 경우
+			
+			// 1개를 뽑은 상태여도, 실패한 경우임
+			// 무조건 return으로 종료
+			return;
 			
 		} else {
 			
-			return combiCnt(n-1, r-1) + combiCnt(n-1, r);
+			combArr[index] = target;
+			
+			// 1. 뽑는 경우
+			//  - 뽑았으니까 r-1
+			//  - 뽑았으니 다음 index+1 해줘야 함
+			combination(combArr, n, r-1, index+1, target+1, arr);
+			
+			// 2. 안 뽑은 경우
+			//  - 안뽑았으므로 r 그대로
+			//  - 안뽑았으니, index도 그대로!
+			//  - index를 그대로 하면,
+			//    예를 들어 현재 1번 구슬을 combArr에 넣었어도,
+			//    다음 재귀에 다시 엎어쳐서 결국 1구슬을 뽑지 않게 된다.
+			combination(combArr, n, r, index, target+1, arr);
 			
 		}
-		
-	}
-	
-	/**
-	 * 
-	 * combi
-	 * 
-	 *  - 조합의 각각의 경우를 구하는 함수
-	 * 
-	 * @param arr
-	 * @param index
-	 * @param n
-	 * @param r
-	 * @param target
-	 * 
-	 */
-	public static void combi(int[] arr, int index, int n, int r, int target) {
-		
 		
 		
 	}
 	
 	public static void main(String[] args) {
 		
-		int n = 4;
+		CombinationUsage2 ex = new CombinationUsage2();
+		
+		int[] arr = {1,2,3};
+		int n = arr.length;
 		int r = 2;
+		int[] combArr = new int[n];
 		
-		int cnt = combiCnt(n, r);
-		
-		System.out.println("cnt : " + cnt);
+		ex.combination(combArr, n, r, 0, 0, arr);
 		
 	}
 	
