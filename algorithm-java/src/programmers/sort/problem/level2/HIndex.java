@@ -1,5 +1,8 @@
 package programmers.sort.problem.level2;
 
+import programmers.sort.problem.level2.solution.HIndex.DeveloperDK;
+import programmers.sort.problem.level2.solution.HIndex.Jar100;
+
 // https://programmers.co.kr/learn/courses/30/lessons/42747
 
 /**
@@ -46,47 +49,11 @@ package programmers.sort.problem.level2;
 
 public class HIndex {
 
-	private int n;
-	private int h;
-	
 	public int solution(int[] citations) {
         int answer = 0;
         
-        n = citations.length;
-        
-        h = n/2;
-        
-        findH(citations, n, h);
-        
-        answer = h;
-        
         return answer;
     }
-	
-	public void findH(int[] arr, int n, int h) {
-		
-		int bigger = 0;
-		int smaller = 0;
-		
-		for (int i=0; i < n; i++) {
-			
-			if (arr[i] >= h) bigger++;
-			
-		}
-		
-		System.out.println("bigger : " + bigger);
-		
-		if (bigger > h) {
-			findH(arr, n, h-1);
-		} else if (bigger < h) {
-			findH(arr, n, h+1);
-		} else {
-			
-			return;
-			
-		}
-		
-	}
 	
 	public static void main(String[] args) {
 		
@@ -94,13 +61,31 @@ public class HIndex {
 		
 		int answer = 0;
 		
-		String show = "default"; // default
+		String show = "dk2"; // default, jar, dk1, dk2
 		
 		if (show.equals("default")) {
 			
 			HIndex hidx = new HIndex();
 			
 			answer = hidx.solution(citations);
+			
+		} else if (show.equals("jar")) {
+			
+			Jar100 jar = new Jar100();
+			
+			answer = jar.solution(citations);
+			
+		} else if (show.equals("dk1")) {
+			
+			DeveloperDK dk = new DeveloperDK();
+			
+			answer = dk.solution1(citations);
+			
+		} else if (show.equals("dk2")) {
+			
+			DeveloperDK dk = new DeveloperDK();
+			
+			answer = dk.solution2(citations);
 			
 		}
 		
