@@ -3,6 +3,7 @@ package programmers.stackAndQueue.problem.level2;
 import java.util.Arrays;
 import java.util.HashMap;
 
+import programmers.stackAndQueue.problem.level2.solution.printer.DeveloperDK;
 import programmers.stackAndQueue.problem.level2.solution.printer.HMYK;
 import programmers.stackAndQueue.problem.level2.solution.printer.Junam;
 import programmers.stackAndQueue.problem.level2.solution.printer.Programmers;
@@ -159,7 +160,7 @@ public class Printer {
 		int answer1 = 0; // 1
 		int answer2 = 0; // 5
 		
-		String show = "hmyk"; // default, junam, pg01, hmyk
+		String show = "dk"; // default, junam, pg01, hmyk, dk
 		
 		if (show.equals("default")) {
 			
@@ -188,6 +189,13 @@ public class Printer {
 			
 			answer1 = hmyk.solution(priorities1, location1);
 			answer2 = hmyk.solution(priorities2, location2);
+			
+		} else if (show.equals("dk")) {
+			
+			DeveloperDK dk = new DeveloperDK();
+			
+			answer1 = dk.solution(priorities1, location1);
+			answer2 = dk.solution(priorities2, location2);
 			
 		}
 		
