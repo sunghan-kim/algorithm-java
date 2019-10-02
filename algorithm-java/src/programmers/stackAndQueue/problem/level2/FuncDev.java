@@ -1,6 +1,11 @@
 package programmers.stackAndQueue.problem.level2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
+import programmers.stackAndQueue.problem.level2.solution.funcDev.DeveloperDK;
+import programmers.stackAndQueue.problem.level2.solution.funcDev.Programmers;
 
 // https://programmers.co.kr/learn/courses/30/lessons/42586
 
@@ -50,6 +55,8 @@ import java.util.Arrays;
 
 public class FuncDev {
 
+	
+	
 	public int[] solution(int[] progresses, int[] speeds) {
         int[] answer = {};
         
@@ -65,13 +72,37 @@ public class FuncDev {
 		
 		int[] answer = {};
 		
-		String show = "default"; // default
+		String show = "pg03"; // default, dk, pg01, pg02, pg03
 		
 		if (show.equals("default")) {
 			
 			FuncDev fd = new FuncDev();
 			
 			answer = fd.solution(progresses, speeds);
+			
+		} else if (show.equals("dk")) {
+			
+			DeveloperDK dk = new DeveloperDK();
+			
+			answer = dk.solution(progresses, speeds);
+			
+		} else if (show.equals("pg01")) {
+			
+			Programmers pg01 = new Programmers();
+			
+			answer = pg01.solution1(progresses, speeds);
+			
+		} else if (show.equals("pg02")) {
+			
+			Programmers pg02 = new Programmers();
+			
+			answer = pg02.solution2(progresses, speeds);
+			
+		} else if (show.equals("pg03")) {
+			
+			Programmers pg03 = new Programmers();
+			
+			answer = pg03.solution3(progresses, speeds);
 			
 		}
 		
