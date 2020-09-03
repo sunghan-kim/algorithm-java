@@ -1,4 +1,4 @@
-package boj.dataStructure.basic.scale;
+package boj.dataStructure.basic.scale.sol1;
 
 /*
     - 문제명 : 음계
