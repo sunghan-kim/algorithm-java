@@ -6,8 +6,7 @@ package boj.dataStructure.basic.printerQueue.sol1;
  *      - 성공
  *      - Element 클래스 위치 조정 필요
  *      - StringTokenizer 학습 필요
- *      - iterator() 학습 필요
- *      - iterator() 대신 개선된 for문 활용 연습 필요
+ *      - iterator() 학습 필요 -> iterator() 보다 개선된 for문 활용
  *
  * */
 
