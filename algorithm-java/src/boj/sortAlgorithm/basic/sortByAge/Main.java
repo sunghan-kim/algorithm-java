@@ -1,4 +1,4 @@
-package boj.sortAlgorithm.basic.sortByAge.sol1;
+package boj.sortAlgorithm.basic.sortByAge;
 
 /*
  *   문제명 : 나이순 정렬

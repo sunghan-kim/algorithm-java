@@ -1,4 +1,4 @@
-package boj.sortAlgorithm.basic.numberSorting.sol1;
+package boj.sortAlgorithm.basic.numberSorting;
 
 /*
  *   문제명 : 수 정렬하기
