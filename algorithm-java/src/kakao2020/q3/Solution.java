@@ -5,14 +5,14 @@ import java.util.Arrays;
 /**
  *  문제 3 : 자물쇠와 열쇠
  *
- *
+ *  블로그 참고 (https://dundung.tistory.com/1380)
  */
 
 public class Solution {
 
     static boolean isOk = false;
 
-    static boolean solution(int[][] key, int[][] lock) {
+    public static boolean solution(int[][] key, int[][] lock) {
         int len = lock.length;
 
         // 3배 확장 후 중앙으로 옮기기
@@ -20,7 +20,7 @@ public class Solution {
 
         for (int i=0; i < len; i++) {
             for (int j=0; j < len; j++) {
-                copyLock[i+len][j+len] = lock[i][j];
+                copyLock[i][j] = key[len-j-1][i];
             }
         }
 
@@ -28,12 +28,35 @@ public class Solution {
         return isOk;
     }
 
-    static void dfs(int[][] key, int[][] lock, int cnt) {
+    public static void dfs(int[][] key, int[][] lock, int cnt) {
         check(key, lock, 0, 0);
+        if (isOk) return;
+        if (cnt >= 4) return;
+        int[][] temp = rotate(key);
+        dfs(temp, lock, cnt+1);
     }
 
-    static void check(int[][] key, int[][] lock, int x, int y) {
+    public static void check(int[][] key, int[][] lock, int x, int y) {
+        if (isOk) return;
 
+        // key를 오른쪽 방향으로 진행, 맨 오른쪾 도달 시 다음 아래 줄 맨 왼쪽으로 이동
+        if (y + key.length > lock.length) {
+            y = 0;
+            x++;
+        }
+
+        if (x + key.length > lock.length) return;
+    }
+
+    public static int[][] rotate(int[][] key) {
+        int len = key.length;
+        int[][] temp = new int[len][len];
+        for (int i=0; i < len; i++) {
+            for (int j=0; j < len; j++) {
+                temp[i][j] = key[len-j-1][i];
+            }
+        }
+        return temp;
     }
 
     public static void main(String[] args) {
