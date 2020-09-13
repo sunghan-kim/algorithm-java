@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  *  문제 3 : 자물쇠와 열쇠
  *
- *  블로그 참고 (https://dundung.tistory.com/1380)
+ *  블로그 참고 (https://dundung.tistory.com/138)
  */
 
 public class Solution {
@@ -46,6 +46,33 @@ public class Solution {
         }
 
         if (x + key.length > lock.length) return;
+
+        int[][] copyLock = new int[lock.length][lock.length];
+
+        for (int i=0; i < lock.length; i++) {
+            copyLock[i] = lock[i].clone();
+        }
+
+        boolean isFail = false;
+        loop:
+            for (int i=0; i < key.length; i++) {
+                for (int j=0; j < key.length; j++) {
+                    if (key[i][j] == 1) {
+                        if (copyLock[i+x][j+y] == 1) {
+                            isFail = true;
+                            break loop;
+                        }
+                        copyLock[i+x][j+y] = key[i][j];
+                    }
+                }
+            }
+
+            if (!isFail) {
+                loop:
+                    for (int i=0; i < lock.length/3; i++) {
+
+                    }
+            }
     }
 
     public static int[][] rotate(int[][] key) {
