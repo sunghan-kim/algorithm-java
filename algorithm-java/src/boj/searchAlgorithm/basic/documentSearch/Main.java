@@ -16,7 +16,11 @@ public class Main {
         String document = br.readLine();
         String word = br.readLine();
 
+        int idx = 0;
 
+        while (idx < document.length()) {
+
+        }
 
         br.close();
     }
