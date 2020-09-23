@@ -15,6 +15,7 @@ public class Main {
         int birdCnt = sc.nextInt();
         int n = 0;
         int time = 0;
+
         while (birdCnt > 0) {
             n++;
             if (n <= birdCnt) {

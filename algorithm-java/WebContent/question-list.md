@@ -20,8 +20,8 @@
 | 재귀 호출           | 0 만들기      | 중     | 재귀 함수          | [https://www.acmicpc.net/problem/7490](https://www.acmicpc.net/problem/7490) |    1     |
 | 정렬 알고리즘(고급) | 수 정렬하기 2 | 하     | 정렬               | [https://www.acmicpc.net/problem/2751](https://www.acmicpc.net/problem/2751) |    1     |
 | 정렬 알고리즘(고급) | K번째 수      | 중     | 정렬               | [https://www.acmicpc.net/problem/11004](https://www.acmicpc.net/problem/11004) |    1     |
-| 탐색 알고리즘(기본) | 문서 찾기     | 하     | 탐색               | [https://www.acmicpc.net/problem/1543](https://www.acmicpc.net/problem/1543) |    0     |
-| 탐색 알고리즘(기본) | 새            | 하     | 탐색               | [https://www.acmicpc.net/problem/1568](https://www.acmicpc.net/problem/1568) |    0     |
+| 탐색 알고리즘(기본) | 문서 찾기     | 하     | 탐색               | [https://www.acmicpc.net/problem/1543](https://www.acmicpc.net/problem/1543) |    1     |
+| 탐색 알고리즘(기본) | 새            | 하     | 탐색               | [https://www.acmicpc.net/problem/1568](https://www.acmicpc.net/problem/1568) |    1     |
 | 탐색 알고리즘(기본) | 베스트셀러    | 하     | 탐색               | [https://www.acmicpc.net/problem/1302](https://www.acmicpc.net/problem/1302) |    0     |
 | 탐색 알고리즘(기본) | 트로피 진열   | 하     | 탐색               | [https://www.acmicpc.net/problem/1668](https://www.acmicpc.net/problem/1668) |    0     |
 | 탐색 알고리즘(기본) | 성 지키기     | 하     | 탐색               | [https://www.acmicpc.net/problem/1236](https://www.acmicpc.net/problem/1236) |    0     |
