@@ -17,7 +17,9 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         StringTokenizer st = new StringTokenizer(br.readLine());
+        for (int i=0; i < n; i++) {
 
+        }
         HashMap<String, Integer> map = new HashMap<>();
 
         br.close();
