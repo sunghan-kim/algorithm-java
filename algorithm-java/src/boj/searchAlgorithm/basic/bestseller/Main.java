@@ -18,7 +18,7 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
         StringTokenizer st = new StringTokenizer(br.readLine());
         for (int i=0; i < n; i++) {
-
+            String book = st.nextToken();
         }
         HashMap<String, Integer> map = new HashMap<>();
 
