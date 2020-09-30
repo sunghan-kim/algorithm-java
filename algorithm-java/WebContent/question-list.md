@@ -23,7 +23,7 @@
 | 탐색 알고리즘(기본) | 문서 찾기     | 하     | 탐색               | [https://www.acmicpc.net/problem/1543](https://www.acmicpc.net/problem/1543) |    1     |
 | 탐색 알고리즘(기본) | 새            | 하     | 탐색               | [https://www.acmicpc.net/problem/1568](https://www.acmicpc.net/problem/1568) |    1     |
 | 탐색 알고리즘(기본) | 베스트셀러    | 하     | 탐색               | [https://www.acmicpc.net/problem/1302](https://www.acmicpc.net/problem/1302) |    1     |
-| 탐색 알고리즘(기본) | 트로피 진열   | 하     | 탐색               | [https://www.acmicpc.net/problem/1668](https://www.acmicpc.net/problem/1668) |    0     |
+| 탐색 알고리즘(기본) | 트로피 진열   | 하     | 탐색               | [https://www.acmicpc.net/problem/1668](https://www.acmicpc.net/problem/1668) |    1     |
 | 탐색 알고리즘(기본) | 성 지키기     | 하     | 탐색               | [https://www.acmicpc.net/problem/1236](https://www.acmicpc.net/problem/1236) |    0     |
 | 탐색 알고리즘(기본) | 공유기 설치   | 중     | 이진 탐색          | [https://www.acmicpc.net/problem/2110](https://www.acmicpc.net/problem/2110) |    0     |
 | 탐색 알고리즘(기본) | 중량제한      | 중상   | 이진 탐색          | [https://www.acmicpc.net/problem/1939](https://www.acmicpc.net/problem/1939) |    0     |
