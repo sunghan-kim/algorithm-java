@@ -1,4 +1,4 @@
-package boj.searchAlgorithm.basic.weightLimit;
+package boj.searchAlgorithm.basic.weightLimit.sol1;
 
 /*
  *   문제명 : 중량 제한
