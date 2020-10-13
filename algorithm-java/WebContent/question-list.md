@@ -27,5 +27,5 @@
 | 탐색 알고리즘(기본) | 성 지키기     | 하     | 탐색               | [https://www.acmicpc.net/problem/1236](https://www.acmicpc.net/problem/1236) |    1     |
 | 탐색 알고리즘(기본) | 공유기 설치   | 중     | 이진 탐색          | [https://www.acmicpc.net/problem/2110](https://www.acmicpc.net/problem/2110) |    1     |
 | 탐색 알고리즘(기본) | 중량제한      | 중상   | 이진 탐색          | [https://www.acmicpc.net/problem/1939](https://www.acmicpc.net/problem/1939) |    2     |
-| 탐색 알고리즘(고급) | 트리 순회     | 하     | 트리, 구현         | [https://www.acmicpc.net/problem/1991](https://www.acmicpc.net/problem/1991) |    0     |
+| 탐색 알고리즘(고급) | 트리 순회     | 하     | 트리, 구현         | [https://www.acmicpc.net/problem/1991](https://www.acmicpc.net/problem/1991) |    1     |
 

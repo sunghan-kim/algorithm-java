@@ -4,7 +4,7 @@ package boj.searchAlgorithm.advanced.treeTraveral;
  *   문제명 : 트리 순회
  *
  *   - https://www.acmicpc.net/problem/1991
- *   - 실패
+ *   - 실패 -> 성공
  *
  * */
 
@@ -56,10 +56,10 @@ public class Main {
 
     public static void postOrder(Node node) {
         if (!".".equals(node.leftNode)) {
-            inOrder(tree.get(node.leftNode));
+            postOrder(tree.get(node.leftNode));
         }
         if (!".".equals(node.rightNode)) {
-            inOrder(tree.get(node.rightNode));
+            postOrder(tree.get(node.rightNode));
         }
         postResult.append(node.data);
     }
