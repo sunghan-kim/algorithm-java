@@ -1,10 +1,9 @@
-package boj.searchAlgorithm.advanced.treeTraveral;
+package boj.searchAlgorithm.advanced.treeTraveral.sol2;
 
 /*
  *   문제명 : 트리 순회
  *
  *   - https://www.acmicpc.net/problem/1991
- *   - 실패 -> 성공
  *
  * */
 
@@ -16,13 +15,7 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 public class Main {
-
-    public static Map<String, Node> tree;
-    public static StringBuffer preResult;
-    public static StringBuffer inResult;
-    public static StringBuffer postResult;
-
-    public static class Node {
+    static class Node {
         String data;
         String leftNode;
         String rightNode;
@@ -34,8 +27,13 @@ public class Main {
         }
     }
 
+    static Map<String, Node> tree;
+    static StringBuilder sb1;
+    static StringBuilder sb2;
+    static StringBuilder sb3;
+
     public static void preOrder(Node node) {
-        preResult.append(node.data);
+        sb1.append(node.data);
         if (!".".equals(node.leftNode)) {
             preOrder(tree.get(node.leftNode));
         }
@@ -43,17 +41,15 @@ public class Main {
             preOrder(tree.get(node.rightNode));
         }
     }
-
     public static void inOrder(Node node) {
         if (!".".equals(node.leftNode)) {
             inOrder(tree.get(node.leftNode));
         }
-        inResult.append(node.data);
+        sb2.append(node.data);
         if (!".".equals(node.rightNode)) {
             inOrder(tree.get(node.rightNode));
         }
     }
-
     public static void postOrder(Node node) {
         if (!".".equals(node.leftNode)) {
             postOrder(tree.get(node.leftNode));
@@ -61,34 +57,33 @@ public class Main {
         if (!".".equals(node.rightNode)) {
             postOrder(tree.get(node.rightNode));
         }
-        postResult.append(node.data);
+        sb3.append(node.data);
     }
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        tree = new HashMap<>();
+        sb1 = new StringBuilder();
+        sb2 = new StringBuilder();
+        sb3 = new StringBuilder();
 
         int n = Integer.parseInt(br.readLine());
-
-        tree = new HashMap<>();
-        preResult = new StringBuffer();
-        inResult = new StringBuffer();
-        postResult = new StringBuffer();
 
         for (int i=0; i < n; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             String data = st.nextToken();
             String leftNode = st.nextToken();
             String rightNode = st.nextToken();
-
             tree.put(data, new Node(data, leftNode, rightNode));
         }
 
         preOrder(tree.get("A"));
-        System.out.println(preResult.toString());
         inOrder(tree.get("A"));
-        System.out.println(inResult.toString());
         postOrder(tree.get("A"));
-        System.out.println(postResult.toString());
+
+        System.out.println(sb1.toString());
+        System.out.println(sb2.toString());
+        System.out.println(sb3.toString());
 
         br.close();
     }
