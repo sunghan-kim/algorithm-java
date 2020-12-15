@@ -1,4 +1,4 @@
-package boj.graphSearchAlgorithm.basic.DFSAndBFS.sol1;
+package boj.graphSearchAlgorithm.basic.DFSAndBFS.sol2;
 
 /*
  *   문제명 : DFS와 BFS
@@ -20,20 +20,16 @@ public class Main {
     public static String dfs(int v) {
         StringBuilder sb = new StringBuilder();
         List<Integer> visited = new ArrayList<>();
-        Stack<Integer> needVisit = new Stack<>();
+        Deque<Integer> needVisit = new ArrayDeque<>();
 
-        needVisit.push(v);
-
-        for (List<Integer> list : GRAPH) {
-            Collections.reverse(list);
-        }
+        needVisit.offer(v);
 
         while (!needVisit.isEmpty()) {
-            int node = needVisit.pop();
+            int node = needVisit.pollLast();
             if (!visited.contains(node)) {
                 visited.add(node);
                 for (int value : GRAPH.get(node)) {
-                    needVisit.push(value);
+                    needVisit.offer(value);
                 }
             }
         }
@@ -48,19 +44,17 @@ public class Main {
     public static String bfs(int v) {
         StringBuilder sb = new StringBuilder();
         List<Integer> visited = new ArrayList<>();
-        Queue<Integer> needVisit = new LinkedList<>();
+        Deque<Integer> needVisit = new ArrayDeque<>();
 
-        needVisit.add(v);
-
-        for (List<Integer> list : GRAPH) {
-            Collections.sort(list);
-        }
+        needVisit.offer(v);
 
         while (!needVisit.isEmpty()) {
-            int node = needVisit.poll();
+            int node = needVisit.pollFirst();
             if (!visited.contains(node)) {
                 visited.add(node);
-                for (int value : GRAPH.get(node)) needVisit.add(value);
+                for (int value : GRAPH.get(node)) {
+                    needVisit.offer(value);
+                }
             }
         }
 
@@ -91,6 +85,8 @@ public class Main {
             GRAPH.get(x).add(y);
             GRAPH.get(y).add(x);
         }
+
+        for (List<Integer> list : GRAPH) Collections.reverse(list);
 
         String dfsResult = dfs(v);
         System.out.println(dfsResult);
