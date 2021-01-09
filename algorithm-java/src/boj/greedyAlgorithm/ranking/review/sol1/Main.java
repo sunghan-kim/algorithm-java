@@ -4,6 +4,8 @@ package boj.greedyAlgorithm.ranking.review.sol1;
  *   문제명 : 등수 매기기 (복습)
  *
  *   - https://www.acmicpc.net/problem/2012
+ *   - 성공
+ *     - 결과 변수를 long으로 선언해야 한다.
  *
  * */
 
@@ -24,9 +26,9 @@ public class Main {
 
         Collections.sort(array);
 
-        int result = 0;
-        for (int i=0; i < n; i++) {
-            result += Math.abs(i+1 - array.get(i));
+        long result = 0;
+        for (int i=1; i <= n; i++) {
+            result += Math.abs(i - array.get(i-1));
         }
 
         System.out.println(result);
