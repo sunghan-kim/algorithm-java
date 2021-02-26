@@ -1,4 +1,4 @@
-package boj.directionVectorr.wolfandsheep.sol1;
+package boj.directionVector.wolfandsheep.sol1;
 
 /*
  *   문제명 : 늑대와 양
