@@ -1,4 +1,4 @@
-package boj.search.organicCabbage.sol1;
+package boj.searchAlgorithm.actualPractice.organicCabbage.sol1;
 
 /*
  *   문제명 : 유기농 배추
